@@ -1,0 +1,21 @@
+
+.header{
+    width: 100%;
+    height: 68px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 16px;
+    display: block;
+    z-index: 0;
+    background-color: #fff;
+
+
+    &_logos{
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: 17px;
+        margin-left: 30px;
+    }
+}
