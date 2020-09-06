@@ -11,5 +11,7 @@
     .card_description
       %p Saving money – is something we would all like.
     = image_tag 'male-avater.png'
-  %button{type: 'submit',class: 'btn-new'} + Add new board
-  
+  -# = link_to new_board_path(@board)
+  -#   %button{type: 'submit',class: 'btn-new'} + Add new board
+  .btn-new
+    = link_to '+ Add new board', new_board_path(@board)
