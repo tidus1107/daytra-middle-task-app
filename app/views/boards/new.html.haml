@@ -1,6 +1,6 @@
 .container
-  -# - board.errors.full_messages.each do |message|
-  -#   %li= message
+  - @board.errors.full_messages.each do |message|
+    %li= message
   %h1.page_title New Board
 
   = form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|

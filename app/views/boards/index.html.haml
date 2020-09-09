@@ -1,20 +1,19 @@
 .container
   %h1.page_title All Boards
-  = link_to board_path(board) do
-    - @boards.each do |board|
-      .card_container
-        .card_content
-          %h3.card_title
-            = board.name
-          .dropdown
-            = image_tag 'actions.svg', class: 'dropdown_mini'
-            .dropdown-content.mini
-              = link_to 'Edit', '#'
-              = link_to 'Delete', '#'
-        .card_description
-          %p= board.description
-        = image_tag 'male-avater.png'
-      -# = link_to new_board_path(@board)
-      -#   %button{type: 'submit',class: 'btn-new'} + Add new board
+  - @boards.each do |board|
+    .card_container
+      .card_content
+        %h3.card_title
+          = board.name
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropdown_mini'
+          .dropdown-content.mini
+            = link_to 'Edit', '#'
+            = link_to 'Delete', '#'
+      .card_description
+        %p= board.description
+      = image_tag 'male-avater.png'
+    -# = link_to new_board_path(@board)
+    -#   %button{type: 'submit',class: 'btn-new'} + Add new board
   .btn-new
     = link_to '+ Add new board', new_board_path(@board)
