@@ -11,7 +11,7 @@
   %body
     %header.header
       .header_logos
-        Boards
+        = link_to 'Boards','boards#index'
       .dropdown
         - if user_signed_in?
           = image_tag 'default-avatar.png',class:'header_avatar dropbtn' 
