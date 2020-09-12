@@ -3,11 +3,12 @@
   .card_container
     .card_content
       %h3.card_title= @board.name
-      .dropdown
-        = image_tag 'actions.svg', class: 'dropdown_mini'
-        .dropdown-content.mini
-          = link_to 'Edit', '#'
-          = link_to 'Delete', '#'
+      - if user_signed_in? && current_user.boards.exists?(id: @board.id)
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropdown_mini'
+          .dropdown-content.mini
+            = link_to 'Edit', edit_board_path(@board)
+            = link_to 'Delete', '#'
     .card_description
       %p= @board.description
     = image_tag 'male-avater.png'

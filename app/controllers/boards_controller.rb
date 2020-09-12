@@ -25,6 +25,10 @@ class BoardsController < ApplicationController
       end
     end
 
+    def edit
+      @board = Board.find(params[:id])
+    end
+
     private
     def board_params
       params.require(:board).permit(:name, :description)
