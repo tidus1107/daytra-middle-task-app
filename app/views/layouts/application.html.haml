@@ -1,4 +1,3 @@
-!!!
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -11,7 +10,7 @@
   %body
     %header.header
       .header_logos
-        = link_to 'Boards','boards#index'
+        = link_to 'Boards', root_path
       .dropdown
         - if user_signed_in?
           = image_tag 'default-avatar.png',class:'header_avatar dropbtn' 
