@@ -1,1 +1,16 @@
-new
+.container
+  - @task.errors.full_messages.each do |message|
+    %li= message
+  %h1.page_title New Task
+
+  = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
+
+    %div
+      = f.label :title, 'Title'
+    %div
+      = f.text_field :title, class: 'text'
+    %div
+      = f.label :content, 'Content'
+    %div
+      = f.text_area :content, class: 'text'
+    = f.submit 'submit', class: 'btn-submit_ml'
