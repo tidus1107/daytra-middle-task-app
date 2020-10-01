@@ -37,11 +37,16 @@ a{
 }
 
 .card_description{
-    font-size: 14px;
+    // display: inline-block;
+    font-size: 12px;
     line-height: 19px;
     opacity: 0.4;
     margin-left: 17px;
     margin-bottom: 29px;
+    // width: 100%;
+    // p{
+    //     text-overflow: ellipsis;
+    // }
 }
 
 img{
