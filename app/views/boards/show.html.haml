@@ -6,17 +6,17 @@
       .card_container
         .card_content
           %h3.card_title
-            = task.name
-          - if user_signed_in? && current_user.boards.exists?(id: task.id)
-            -# .dropdown
-            -#   = image_tag 'actions.svg', class: 'dropdown_mini'
-            -#   .dropdown-content.mini
-            -#     = link_to 'Edit', edit_board_path(board)
-            -#     = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除しますか？'}
-        -# .card_description
-        -#   %p= board.description
-        -# = image_tag 'male-avater.png'
+            = task.title
+          -# - if user_signed_in? && current_user.boards.exists?(id: task.id)
+          -#   .dropdown
+          -#     = image_tag 'actions.svg', class: 'dropdown_mini'
+          -#     .dropdown-content.mini
+          -#       = link_to 'Edit', edit_board_path(board)
+          -#       = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除しますか？'}
+        .card_description
+          %p= task.content
+      -#   = image_tag 'male-avater.png'
       -# = link_to new_board_path(@board)
       -#   %button{type: 'submit',class: 'btn-new'} + Add new board
   .btn-new
-    = link_to '+ Add new board', new_board_task_path(@task)
+    = link_to '+ Add new task', new_board_task_path(@board)

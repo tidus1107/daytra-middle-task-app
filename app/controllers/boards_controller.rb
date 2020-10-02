@@ -7,7 +7,7 @@ class BoardsController < ApplicationController
     end
 
     def show
-      # @task = @board.tasks
+      @tasks = @board.tasks
     end
 
     def new
