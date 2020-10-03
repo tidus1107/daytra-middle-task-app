@@ -18,10 +18,10 @@ $card-layout-Y: 161px;
 
 .card_container{
     width: $card-layout-X;
-    height: $card-layout-Y;
+    // height: $card-layout-Y;
     background-color: $form-bg-color;
     border-radius: 10px;
-    padding-top: 32px;
+    padding: 32px 0 65px;
     margin-bottom: 20px;
     cursor: pointer;
 }
@@ -30,6 +30,30 @@ $card-layout-Y: 161px;
     display: flex;
     justify-content: space-between;
     margin: 0 17px 6px;
+}
+
+.image_container{
+    padding: 0 20px 0;
+}
+
+.card_image{
+        height: 180px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 27px;
+    
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          width: 100%;
+          
+        }
+      
 }
 
 a{
@@ -49,9 +73,7 @@ a{
     // }
 }
 
-img{
-    margin-left: 20px;
-}
+
 
 .btn-new{
     width: $card-layout-X;

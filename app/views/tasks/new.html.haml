@@ -6,6 +6,10 @@
   = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
 
     %div
+      = f.label :eyecatch, 'アイキャッチ'
+    %div
+      = f.file_field :eyecatch
+    %div
       = f.label :title, 'Title'
     %div
       = f.text_field :title, class: 'text'
