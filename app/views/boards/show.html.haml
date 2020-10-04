@@ -11,11 +11,11 @@
         .card_content
           %h3.card_title
             = task.title
-          - if user_signed_in? && current_user.tasks.exists?(board_id: @board.id, id: task.id)
-            .dropdown
-              = image_tag 'actions.svg', class: 'dropdown_mini'
-              .dropdown-content.mini
-                = link_to 'Edit', edit_board_task_path(task)
+          -# - if user_signed_in? && current_user.tasks.exists?(board_id: @board.id, id: task.id)
+          -#   .dropdown
+          -#     = image_tag 'actions.svg', class: 'dropdown_mini'
+          -#     .dropdown-content.mini
+          -#       = link_to 'Edit', edit_board_task_path(board_id: @board.id, id: task.id)
           -#       = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除しますか？'}
         .card_description
           %p= task.content

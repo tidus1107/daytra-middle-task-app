@@ -4,8 +4,8 @@
       = @task.title
     - if user_signed_in? && current_user.tasks.exists?(id: @task.id)
       .dropdown
-        = image_tag 'actions.svg', class: 'dropdown_mini'
-        .dropdown-content.mini
+        = image_tag 'actions.svg', class: 'dropdown_mini_task'
+        .dropdown-content.task
           = link_to 'Edit', edit_board_task_path(id: @task.id)
     -#       = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除しますか？'}
   .task_container
