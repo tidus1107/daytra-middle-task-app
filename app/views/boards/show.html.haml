@@ -22,5 +22,6 @@
       -#   = image_tag 'male-avater.png'
       -# = link_to new_board_path(@board)
       -#   %button{type: 'submit',class: 'btn-new'} + Add new board
-  .btn-new
-    = link_to '+ Add new task', new_board_task_path(@board)
+  - if user_signed_in? && current_user.boards.exists?(id: @board.id)
+    .btn-new
+      = link_to '+ Add new task', new_board_task_path(@board)

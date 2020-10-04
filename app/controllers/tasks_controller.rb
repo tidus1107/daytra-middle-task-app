@@ -34,14 +34,22 @@ class TasksController < ApplicationController
 
     def update
       board = Board.find(params[:board_id])
-      @task = board.tasks.find(params[:id])
-      @task.user = current_user
+      task = board.tasks.find(params[:id])
+      task.user = current_user
         if @task.update(task_params)
             redirect_to board_task_path(id: @task.id), notice: '更新出来ました'
         else
             flash.now[:error] = '更新出来ませんでした'
             render :edit
         end
+    end
+
+    def destroy
+      board = Board.find(params[:board_id])
+      task = board.tasks.find(params[:id])
+      task.user = current_user
+      task.destroy!
+      redirect_to '/', notice: '削除に成功しました'
     end
 
     private
