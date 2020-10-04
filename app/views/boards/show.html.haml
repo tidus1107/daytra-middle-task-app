@@ -2,7 +2,7 @@
   %h1.page_title
     = @board.name
   - @tasks.each do |task|
-    = link_to board_task_path(task) do
+    = link_to board_task_path(board_id: @board.id, id: task.id) do
       .card_container
         - if task.eyecatch.attached?
           .image_container
@@ -11,11 +11,11 @@
         .card_content
           %h3.card_title
             = task.title
-          -# - if user_signed_in? && current_user.boards.exists?(id: task.id)
-          -#   .dropdown
-          -#     = image_tag 'actions.svg', class: 'dropdown_mini'
-          -#     .dropdown-content.mini
-          -#       = link_to 'Edit', edit_board_path(board)
+          - if user_signed_in? && current_user.tasks.exists?(board_id: @board.id, id: task.id)
+            .dropdown
+              = image_tag 'actions.svg', class: 'dropdown_mini'
+              .dropdown-content.mini
+                = link_to 'Edit', edit_board_task_path(task)
           -#       = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除しますか？'}
         .card_description
           %p= task.content

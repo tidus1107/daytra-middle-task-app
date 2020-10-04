@@ -1,0 +1,24 @@
+@import '_variables';
+
+
+.task{
+    &_content{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_title{
+        top: calc(50% - 36px/2);
+        height: 36px;
+        margin-bottom: 32px;
+        font-weight: bold;
+    }
+
+    &_description{
+        width: 100%;
+        padding: 20px 15px 26px;
+        background-color: $form-bg-color;
+        border-radius: 8px;
+
+    }
+}

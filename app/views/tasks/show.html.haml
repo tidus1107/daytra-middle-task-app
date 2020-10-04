@@ -1,0 +1,21 @@
+.container
+  .task_content
+    %h1.task_title
+      = @task.title
+    - if user_signed_in? && current_user.tasks.exists?(id: @task.id)
+      .dropdown
+        = image_tag 'actions.svg', class: 'dropdown_mini'
+        .dropdown-content.mini
+          = link_to 'Edit', edit_board_task_path(id: @task.id)
+    -#       = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除しますか？'}
+  .task_container
+    - if @task.eyecatch.attached?
+      .card_image
+        = image_tag @task.eyecatch
+    .task_description
+      %p= @task.content
+    -#   = image_tag 'male-avater.png'
+    -# = link_to new_board_path(@board)
+    -#   %button{type: 'submit',class: 'btn-new'} + Add new board
+  .btn-new_mini
+    = link_to '+ Add new comment'

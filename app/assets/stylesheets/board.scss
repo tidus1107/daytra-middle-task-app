@@ -21,7 +21,7 @@ $card-layout-Y: 161px;
     // height: $card-layout-Y;
     background-color: $form-bg-color;
     border-radius: 10px;
-    padding: 32px 0 65px;
+    padding: 32px 0 45px;
     margin-bottom: 20px;
     cursor: pointer;
 }
@@ -54,6 +54,11 @@ $card-layout-Y: 161px;
           
         }
       
+}
+
+.prf_img{
+    margin-left: 20px;
+    padding-top: 12px;
 }
 
 a{
