@@ -18,4 +18,4 @@
     -# = link_to new_board_path(@board)
     -#   %button{type: 'submit',class: 'btn-new'} + Add new board
   .btn-new_mini
-    = link_to '+ Add new comment'
+    = link_to '+ Add new comment', new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id)
