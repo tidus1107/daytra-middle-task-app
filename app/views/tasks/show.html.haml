@@ -17,5 +17,10 @@
     -#   = image_tag 'male-avater.png'
     -# = link_to new_board_path(@board)
     -#   %button{type: 'submit',class: 'btn-new'} + Add new board
+  -# .comment_content
+  .comment_title Comment
+  - @comments.each do |comment|
+    .task_comment
+      = comment.content
   .btn-new_mini
     = link_to '+ Add new comment', new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id)
