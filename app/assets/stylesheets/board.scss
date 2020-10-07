@@ -91,6 +91,18 @@ a{
     line-height: 25px;
     cursor: pointer;
     text-align: center;
+    &_mini{
+        padding: 15px 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1px dashed rgba(0, 0, 0, 0.2);
+        margin-top: 40px;
+        font-size: 18px;
+        line-height: 25px;
+        cursor: pointer;
+        text-align: center;
+    }
+
     a{
         display: block;
         color: #000000;
