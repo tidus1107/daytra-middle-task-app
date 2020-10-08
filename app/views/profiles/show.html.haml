@@ -1,0 +1,28 @@
+.container.profilePage
+  .profilePage_user
+    .profilePage_user_image
+      = image_tag current_user.avatar_image
+    .profilePage_user_basicInfo
+      .profilePage_user_name
+        .profile_user_desplayName
+          = @profile.name
+        .profilePage_user_actionButton
+          = link_to 'Edit', edit_profile_path
+      .profilePage_user_department
+        = @profile.department
+  - current_user.boards.each do |board|
+    = link_to board_path(board) do
+      .card_container
+        .card_content
+          %h3.card_title
+            = board.name
+          - if user_signed_in? && current_user.boards.exists?(id: board.id)
+            .dropdown
+              = image_tag 'actions.svg', class: 'dropdown_mini'
+              .dropdown-content.mini
+                = link_to 'Edit', edit_board_path(board)
+                = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除しますか？'}
+        .card_description
+          %p= board.description
+        .prf_img
+          = image_tag 'male-avater.png'

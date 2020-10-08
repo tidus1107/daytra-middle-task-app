@@ -1,0 +1,21 @@
+.container
+  %ul
+    - @profile.errors.full_messages.each do |message|
+      %li= message
+
+  = form_with(model: @profile, url: profile_path,method: 'put', local: true) do |f|
+    %div
+      = f.label :avatar, 'アバター'
+    %div
+      = f.file_field :avatar
+    %div
+      = f.label :name, '名前'
+    %div
+      = f.text_field :name, class: 'text'
+    %div
+      = f.label :department, '所属'
+    %div
+      = f.text_field :department, class: 'text'
+   
+
+    = f.submit '保存', class: 'btn-submit_ml'
