@@ -15,7 +15,7 @@
         .card_description
           %p= board.description
         .prf_img
-          = image_tag 'male-avater.png'
+          = image_tag board.user.avatar_image
       -# = link_to new_board_path(@board)
       -#   %button{type: 'submit',class: 'btn-new'} + Add new board
   .btn-new

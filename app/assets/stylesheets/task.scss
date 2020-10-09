@@ -30,17 +30,27 @@
 
 .comment{
 
+    &_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     &_title{
         font-size: 26px;
         line-height: 36px;
         margin-top: 40px;
     }
 
-    &_content{
+    &_contents{
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 20px;
+    }
+
+    &_content{
+        margin-left: 20px;
     }
 
     &_delete{
