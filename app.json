@@ -1,0 +1,16 @@
+{
+    "name": "task app",
+    "description": "This is taskapp",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/tidus1107/daytra-middle-task-app",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+  }
