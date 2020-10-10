@@ -5,11 +5,13 @@
     .profilePage_user_basicInfo
       .profilePage_user_name
         .profile_user_desplayName
-          = @profile.name
+          - if current_user.profile.present?
+            = @profile.name
         .profilePage_user_actionButton
           = link_to 'Edit', edit_profile_path
       .profilePage_user_department
-        = @profile.department
+        - if current_user.profile.present?
+          = @profile.department
   - current_user.boards.each do |board|
     = link_to board_path(board) do
       .card_container
