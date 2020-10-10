@@ -56,17 +56,28 @@ $card-layout-Y: 161px;
       
 }
 
+.card_detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .prf_img{
     margin-left: 20px;
-    padding-top: 12px;
     img{
     width: 40px;
     height: 40px;
+    border-radius: 50px;
     }
+}
+
+.comment_shape{
+    margin-right: 20px;
 }
 
 a{
     border-radius: 10px;
+    color: #000;
 }
 
 .card_description{

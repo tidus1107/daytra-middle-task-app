@@ -19,8 +19,13 @@
           -#       = link_to 'Delete', board_path(board), data: {method: 'delete', confirm: '本当に削除しますか？'}
         .card_description
           %p= task.content
-        .prf_img
-          = image_tag task.user.avatar_image
+        .card_detail
+          .prf_img
+            = image_tag task.user.avatar_image
+          .card_comment
+            .comment_shape
+              %span= task.comment_count
+              = image_tag 'Shape.png'
       -#   = image_tag 'male-avater.png'
       -# = link_to new_board_path(@board)
       -#   %button{type: 'submit',class: 'btn-new'} + Add new board
