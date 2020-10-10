@@ -20,10 +20,14 @@
   -# .comment_content
   .comment_title Comment
   - @comments.each do |comment|
-    .comment_content
-      .task_comment
-        = comment.content
-      .comment_delete
-        = link_to '×', board_task_comment_path(board_id: @task.board_id, task_id: @task.id, id: comment.id), data: {method: 'delete', confirm: '本当に削除しますか？'}
+    .comment_container
+      .comment_contents
+        .prf_img
+          = image_tag comment.user.avatar_image
+        .comment_content
+          = comment.content
+      - if user_signed_in? && current_user.comments.exists?(id: comment.id)
+        .comment_delete
+          = link_to '×', board_task_comment_path(board_id: @task.board_id, task_id: @task.id, id: comment.id), data: {method: 'delete', confirm: '本当に削除しますか？'}
   .btn-new_mini
     = link_to '+ Add new comment', new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id)

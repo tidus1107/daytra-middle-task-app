@@ -3,7 +3,7 @@
     %li= message
   %h1.page_title New Card
 
-  = form_with(model: @task, url: board_tasks_path(@task.board), method: 'put', local: true) do |f|
+  = form_with(model: @task, url: board_tasks_path(@task.board), method: 'post', local: true) do |f|
 
     %div
       = f.label :eyecatch, 'アイキャッチ'
